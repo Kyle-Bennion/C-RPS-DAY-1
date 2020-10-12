@@ -1,5 +1,5 @@
 ﻿using System;
-using RockPaperSci;
+using RPS.Controllers;
 
 
 namespace RockPaperSci
@@ -20,10 +20,8 @@ namespace RockPaperSci
 
 
 ");
-      Console.WriteLine("Pick Your Weapon(Rock, Paper, Scissors)!");
-      var name = Console.ReadLine();
-
-
+      var gc = new GameController();
+      gc.Run();
     }
   }
 }
