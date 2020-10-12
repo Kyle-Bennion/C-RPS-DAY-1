@@ -1,5 +1,5 @@
 using System;
-
+using System.Collections.Generic;
 
 namespace RPS.Controllers
 {
@@ -46,8 +46,25 @@ namespace RPS.Controllers
     {
       Console.WriteLine("Pick Your Weapon(Rock, Paper, Scissors)!");
       var Weapon = Console.ReadLine();
+      PlayerWeapon = Weapon;
+      GetCPUWeapon();
 
 
     }
+    private void GetCPUWeapon()
+    {
+      var WeaponsList = new List<string>()
+    {
+      "Rock",
+      "Paper",
+      "Scissors",
+    };
+      Random rdmNumber = new Random();
+      var aRandomNumber = rdmNumber.Next(WeaponsList.Count);
+      ComputerWeapon = WeaponsList[aRandomNumber];
+      Console.WriteLine($"You Picked {PlayerWeapon} Enemy Picked {ComputerWeapon}");
+
+    }
+    //private void CompareWeaponSize();
   }
 }
